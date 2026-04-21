@@ -108,7 +108,7 @@ export default function LoginPage() {
 
       {/* LAYER 2: Black panel (right half, rounded LEFT corners, flush right) */}
       <div
-        className="hidden md:block absolute top-0 bottom-0 right-0 md:w-1/2 bg-[#1a1a1a] rounded-l-[2.5rem]"
+        className="hidden md:block absolute top-0 bottom-0 right-0 md:w-1/2 bg-[#232222] rounded-l-[2.5rem]"
         data-testid="login-brand-bg"
       />
 
