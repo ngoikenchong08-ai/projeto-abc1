@@ -98,9 +98,9 @@ export default function LoginPage() {
       data-testid="login-page"
       style={{ fontFamily: "'DM Sans', ui-sans-serif, system-ui, sans-serif" }}
     >
-      {/* LAYER 1: Model image (left half, full-bleed) */}
+      {/* LAYER 1: Model image (extends slightly past 50% so it sits behind the black panel's rounded corners) */}
       <div
-        className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-[#B5965F] bg-no-repeat bg-center bg-cover"
+        className="absolute inset-y-0 left-0 w-full md:w-[calc(50%+3rem)] bg-[#B5965F] bg-no-repeat bg-[position:center_left] bg-cover"
         style={{ backgroundImage: `url('${MODEL_IMG}')` }}
         aria-hidden="true"
         data-testid="login-hero-image"
