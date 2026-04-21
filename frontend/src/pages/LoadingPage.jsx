@@ -1,25 +1,15 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
 const LOGO_URL =
   "https://customer-assets.emergentagent.com/job_user-access-161/artifacts/byey8gmu_imgi_2_logo.svg";
 
 export default function LoadingPage() {
-  const navigate = useNavigate();
-
-  // Allow user to go back after 15s (simulation only)
-  useEffect(() => {
-    const t = setTimeout(() => {
-      // keep loading visible; user can manually navigate back
-    }, 15000);
-    return () => clearTimeout(t);
-  }, []);
-
   return (
     <div
-      className="min-h-screen w-full bg-[#1a1a1a] text-white flex flex-col items-center justify-center px-6"
+      className="min-h-screen w-full bg-[#232222] text-white flex flex-col items-center justify-center px-6 select-none pointer-events-none"
       data-testid="loading-page"
-      style={{ fontFamily: "'DM Sans', ui-sans-serif, system-ui, sans-serif" }}
+      style={{
+        fontFamily: "'DM Sans', ui-sans-serif, system-ui, sans-serif",
+        cursor: "not-allowed",
+      }}
     >
       <img
         src={LOGO_URL}
@@ -48,15 +38,6 @@ export default function LoadingPage() {
       <p className="mt-2 text-sm text-white/60">
         Estamos validando seu acesso com segurança
       </p>
-
-      <button
-        type="button"
-        onClick={() => navigate("/")}
-        className="mt-14 text-sm text-white/60 hover:text-white underline underline-offset-4"
-        data-testid="back-to-login"
-      >
-        Voltar ao login
-      </button>
     </div>
   );
 }
