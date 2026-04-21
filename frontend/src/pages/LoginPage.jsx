@@ -149,7 +149,7 @@ export default function LoginPage() {
 
       {/* LAYER 4: White form panel (right third, rounded LEFT corners, flush right) */}
       <div
-        className="absolute top-0 bottom-0 right-0 w-full md:w-[33%] bg-white md:rounded-l-[2.5rem] flex flex-col px-8 md:px-12 py-8 z-20 shadow-[-20px_0_40px_-20px_rgba(0,0,0,0.25)]"
+        className="absolute top-0 bottom-0 right-0 w-full md:w-[26%] bg-white md:rounded-l-[2.5rem] flex flex-col px-8 md:px-10 py-8 z-20 shadow-[-20px_0_40px_-20px_rgba(0,0,0,0.25)]"
         data-testid="login-form-panel"
       >
         {/* Ajuda button - top right */}
