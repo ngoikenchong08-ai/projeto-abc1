@@ -94,13 +94,13 @@ export default function LoginPage() {
 
   return (
     <div
-      className="relative min-h-screen w-full bg-[#B89F6B] overflow-hidden"
+      className="relative min-h-screen w-full bg-[#B5965F] overflow-hidden"
       data-testid="login-page"
       style={{ fontFamily: "'DM Sans', ui-sans-serif, system-ui, sans-serif" }}
     >
       {/* LAYER 1: Model image (left half, full-bleed) */}
       <div
-        className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-[#B89F6B] bg-no-repeat bg-center bg-cover"
+        className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-[#B5965F] bg-no-repeat bg-center bg-cover"
         style={{ backgroundImage: `url('${MODEL_IMG}')` }}
         aria-hidden="true"
         data-testid="login-hero-image"
