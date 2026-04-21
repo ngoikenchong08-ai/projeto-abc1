@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { HelpCircle, User, Delete } from "lucide-react";
+import { HelpCircle, Delete } from "lucide-react";
 import { maskCPF, onlyDigits, isValidCPF } from "@/utils/cpf";
 
 const LOGO_URL =
@@ -10,30 +10,46 @@ const MODEL_IMG =
 
 const PASSWORD_LENGTH = 8;
 
-// Custom Password icon (rounded rect with 3 dots + padlock at bottom-right)
+// Custom User icon (head circle + body with slight downward hooks at the sides)
+const UserIcon = ({ className = "" }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="8" r="3.3" />
+    <path d="M5.5 19.5c0-.9.3-1.6.8-2.2 1.3-1.5 3.4-2.3 5.7-2.3s4.4.8 5.7 2.3c.5.6.8 1.3.8 2.2" />
+  </svg>
+);
+
+// Custom Password icon (rounded rect with 3 dots + padlock at bottom-right corner)
 const PasswordIcon = ({ className = "" }) => (
   <svg
     className={className}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="1.75"
+    strokeWidth="1.8"
     strokeLinecap="round"
     strokeLinejoin="round"
     aria-hidden="true"
   >
-    {/* Rounded rectangle (PIN display) */}
-    <path d="M3 7.5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-5" />
-    {/* Left-bottom corner coming down */}
-    <path d="M14 15.5H5a2 2 0 0 1-2-2V7.5" />
-    {/* Three dots inside the display */}
-    <circle cx="7.5" cy="10.5" r="0.6" fill="currentColor" stroke="none" />
-    <circle cx="11" cy="10.5" r="0.6" fill="currentColor" stroke="none" />
-    <circle cx="14.5" cy="10.5" r="0.6" fill="currentColor" stroke="none" />
-    {/* Padlock body (bottom-right) */}
-    <rect x="15.5" y="16" width="5.5" height="4.5" rx="0.8" />
-    {/* Padlock shackle */}
-    <path d="M16.75 16v-1.25a1.5 1.5 0 0 1 3 0V16" />
+    {/* Display rectangle (open on bottom-right where padlock sits) */}
+    <path d="M3.5 6.5a1.5 1.5 0 0 1 1.5-1.5h14a1.5 1.5 0 0 1 1.5 1.5v4" />
+    <path d="M20.5 10.5" />
+    <path d="M14 14H5a1.5 1.5 0 0 1-1.5-1.5v-6" />
+    {/* Three dots inside */}
+    <circle cx="7.5" cy="9.5" r="0.7" fill="currentColor" stroke="none" />
+    <circle cx="11" cy="9.5" r="0.7" fill="currentColor" stroke="none" />
+    <circle cx="14.5" cy="9.5" r="0.7" fill="currentColor" stroke="none" />
+    {/* Padlock (bottom-right) */}
+    <rect x="15" y="15" width="6" height="5" rx="0.7" />
+    <path d="M16.5 15v-1.5a1.5 1.5 0 0 1 3 0V15" />
   </svg>
 );
 
@@ -210,9 +226,8 @@ export default function LoginPage() {
                 : "border-[#1a1a1a] focus-within:border-[#000000]"
             }`}
           >
-            <User
+            <UserIcon
               className={`w-5 h-5 ${cpfError ? "text-red-500" : "text-[#0072b1]"}`}
-              strokeWidth={1.75}
             />
             <input
               id="cpf"
