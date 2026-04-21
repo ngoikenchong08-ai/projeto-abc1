@@ -100,7 +100,7 @@ export default function LoginPage() {
     >
       {/* LEFT: Model image */}
       <div
-        className="hidden md:block flex-[0_0_33%] bg-[#cba862] bg-no-repeat bg-center bg-cover"
+        className="hidden md:block flex-[0_0_46%] bg-[#cba862] bg-no-repeat bg-center bg-cover"
         style={{ backgroundImage: `url('${MODEL_IMG}')` }}
         aria-hidden="true"
         data-testid="login-hero-image"
@@ -108,18 +108,18 @@ export default function LoginPage() {
 
       {/* CENTER: Dark panel with brand */}
       <div
-        className="flex-1 md:flex-[0_0_34%] bg-[#1a1a1a] text-white flex flex-col justify-between px-8 md:px-14 py-10"
+        className="flex-1 md:flex-[0_0_22%] bg-[#1a1a1a] text-white flex flex-col justify-between px-6 md:px-8 py-10"
         data-testid="login-brand-panel"
       >
         <div>
           <img
             src={LOGO_URL}
             alt="Banco ABC Brasil"
-            className="h-20 w-auto"
+            className="h-16 w-auto"
             data-testid="abc-logo"
           />
           <h1
-            className="mt-16 text-5xl md:text-6xl leading-[1.05] font-light tracking-tight"
+            className="mt-14 text-4xl md:text-5xl leading-[1.05] font-light tracking-tight"
             data-testid="login-title"
           >
             Internet
@@ -127,10 +127,9 @@ export default function LoginPage() {
             Banking
           </h1>
         </div>
-        <div className="text-sm leading-relaxed text-white/90 max-w-xs">
+        <div className="text-sm leading-relaxed text-white/90">
           <p>
             O Banco não solicita informações e dados
-            <br />
             por telefone, evite golpes e fraudes.
           </p>
           <a
@@ -145,7 +144,7 @@ export default function LoginPage() {
 
       {/* RIGHT: White form panel */}
       <div
-        className="flex-1 md:flex-[0_0_33%] bg-white flex flex-col px-8 md:px-14 py-8 relative"
+        className="flex-1 md:flex-[0_0_32%] bg-white flex flex-col px-8 md:px-12 py-8 relative"
         data-testid="login-form-panel"
       >
         {/* Ajuda button - top right */}
