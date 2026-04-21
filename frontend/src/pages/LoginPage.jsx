@@ -114,7 +114,7 @@ export default function LoginPage() {
 
       {/* LAYER 3: Brand content over the black panel (left portion of the dark area) */}
       <div
-        className="hidden md:flex absolute top-0 bottom-0 left-1/2 md:w-[17%] text-white flex-col justify-between px-10 py-10 z-10"
+        className="hidden md:flex absolute top-0 bottom-0 left-1/2 md:w-[22%] text-white flex-col justify-between px-10 py-10 z-10"
         data-testid="login-brand-panel"
       >
         <div>
