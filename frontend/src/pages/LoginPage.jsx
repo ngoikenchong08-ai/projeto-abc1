@@ -166,7 +166,7 @@ export default function LoginPage() {
 
         <form
           onSubmit={handleSubmit}
-          className="mt-12 flex-1 flex flex-col"
+          className="mt-32 flex-1 flex flex-col"
           data-testid="login-form"
         >
           {/* CPF field */}
@@ -180,7 +180,7 @@ export default function LoginPage() {
             className={`flex items-center gap-3 border rounded-lg px-4 h-14 transition-colors ${
               cpfError
                 ? "border-red-500"
-                : "border-[#0072b1] focus-within:border-[#005f95]"
+                : "border-[#1a1a1a] focus-within:border-[#000000]"
             }`}
           >
             <User
@@ -224,8 +224,8 @@ export default function LoginPage() {
             onClick={openKeypad}
             className={`flex items-center gap-3 border rounded-lg px-4 h-14 text-left transition-colors ${
               showKeypad
-                ? "border-[#005f95]"
-                : "border-[#0072b1] hover:border-[#005f95]"
+                ? "border-[#000000]"
+                : "border-[#1a1a1a] hover:border-[#000000]"
             } ${!cpfValid ? "opacity-95" : ""}`}
             data-testid="password-field"
           >
