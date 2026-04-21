@@ -349,7 +349,7 @@ export default function LoginPage() {
 
           <div className="mt-6">
             <hr className="border-t border-gray-200 mb-5" />
-            <p className="text-sm text-[#4b5563]">
+            <p className="text-xs text-[#4b5563] whitespace-nowrap">
               Já abriu sua conta e quer solicitar o acesso?{" "}
               <a
                 href="#"
