@@ -94,21 +94,62 @@ export default function LoginPage() {
 
   return (
     <div
-      className="relative min-h-screen w-full flex bg-[#1a1a1a] overflow-hidden"
+      className="relative min-h-screen w-full bg-[#cba862] overflow-hidden"
       data-testid="login-page"
       style={{ fontFamily: "'DM Sans', ui-sans-serif, system-ui, sans-serif" }}
     >
-      {/* LEFT: Model image (extends under black panel's left corners) */}
+      {/* LAYER 1: Model image (left half, full-bleed) */}
       <div
-        className="hidden md:block md:w-[57%] bg-[#cba862] bg-no-repeat bg-center bg-cover"
+        className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-[#cba862] bg-no-repeat bg-center bg-cover"
         style={{ backgroundImage: `url('${MODEL_IMG}')` }}
         aria-hidden="true"
         data-testid="login-hero-image"
       />
 
-      {/* RIGHT: White panel (extends under black panel's right corners) */}
+      {/* LAYER 2: Black panel (right half, rounded LEFT corners, flush right) */}
       <div
-        className="flex-1 md:flex-[0_0_43%] bg-white flex flex-col pl-8 md:pl-[14%] pr-8 md:pr-10 py-8 relative"
+        className="hidden md:block absolute top-0 bottom-0 right-0 md:w-1/2 bg-[#1a1a1a] rounded-l-[2.5rem]"
+        data-testid="login-brand-bg"
+      />
+
+      {/* LAYER 3: Brand content over the black panel (left portion of the dark area) */}
+      <div
+        className="hidden md:flex absolute top-0 bottom-0 left-1/2 md:w-[17%] text-white flex-col justify-between px-10 py-10 z-10"
+        data-testid="login-brand-panel"
+      >
+        <div>
+          <img
+            src={LOGO_URL}
+            alt="Banco ABC Brasil"
+            className="h-16 w-auto"
+            data-testid="abc-logo"
+          />
+          <h1
+            className="mt-14 text-4xl lg:text-5xl leading-[1.05] font-light tracking-tight"
+            data-testid="login-title"
+          >
+            Internet
+            <br />
+            Banking
+          </h1>
+        </div>
+        <div className="text-sm leading-relaxed text-white/90">
+          <p>
+            O Banco não solicita informações e dados por telefone, evite golpes e fraudes.
+          </p>
+          <a
+            href="#"
+            className="inline-block mt-4 underline underline-offset-4 text-white hover:text-white/80"
+            data-testid="saber-mais-link"
+          >
+            Saber mais
+          </a>
+        </div>
+      </div>
+
+      {/* LAYER 4: White form panel (right third, rounded LEFT corners, flush right) */}
+      <div
+        className="absolute top-0 bottom-0 right-0 w-full md:w-[33%] bg-white md:rounded-l-[2.5rem] flex flex-col px-8 md:px-12 py-8 z-20 shadow-[-20px_0_40px_-20px_rgba(0,0,0,0.25)]"
         data-testid="login-form-panel"
       >
         {/* Ajuda button - top right */}
@@ -294,41 +335,6 @@ export default function LoginPage() {
             </p>
           </div>
         </form>
-      </div>
-
-      {/* FLOATING: Dark brand panel with rounded corners (overlays image + white) */}
-      <div
-        className="hidden md:flex absolute top-3 bottom-3 left-[46%] w-[22%] bg-[#1a1a1a] text-white rounded-3xl flex-col justify-between px-8 py-10 z-10 shadow-2xl"
-        data-testid="login-brand-panel"
-      >
-        <div>
-          <img
-            src={LOGO_URL}
-            alt="Banco ABC Brasil"
-            className="h-16 w-auto"
-            data-testid="abc-logo"
-          />
-          <h1
-            className="mt-14 text-4xl lg:text-5xl leading-[1.05] font-light tracking-tight"
-            data-testid="login-title"
-          >
-            Internet
-            <br />
-            Banking
-          </h1>
-        </div>
-        <div className="text-sm leading-relaxed text-white/90">
-          <p>
-            O Banco não solicita informações e dados por telefone, evite golpes e fraudes.
-          </p>
-          <a
-            href="#"
-            className="inline-block mt-4 underline underline-offset-4 text-white hover:text-white/80"
-            data-testid="saber-mais-link"
-          >
-            Saber mais
-          </a>
-        </div>
       </div>
     </div>
   );
